@@ -97,6 +97,12 @@
     -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
   }
+  .debug-button {
+    position: relative;
+    z-index: 9999; /* Very high to ensure it’s on top */
+    outline: 2px solid red !important; /* Visible border for debugging */
+  }
+  
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;

@@ -1,9 +1,14 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-    content: ["./*.html"], // Scans all HTML files for Tailwind classes
-    theme: {
-      extend: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
+      fontSize: {
+        '10xl': '10rem', // Custom font size
+      },
     },
-    plugins: [],
-  };
-  
+  },
+  plugins: [],
+};
