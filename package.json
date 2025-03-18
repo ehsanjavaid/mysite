@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "tailwindcss -i ./src/tailwind.css -o ./public/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,9 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.14",
-    "aos": "^2.3.4"
+    "aos": "^2.3.4",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1"
   }
 }
