@@ -11,7 +11,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <!-- Atropos CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/atropos/css">
   <!-- AOS JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- font family -->
@@ -19,9 +20,43 @@
 
 </head>
 <style>
-  .block {
-    font-family: play;
-    font-style: bold;
+  * {
+    font-family: 'Play', sans-serif;
+  }
+
+  .card {
+    perspective: 1000px;
+  }
+
+  .card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+  }
+
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-back {
+    background: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform: rotateY(180deg);
   }
 </style>
 
@@ -123,7 +158,7 @@
         </h2>
 
         <!-- Main Title -->
-        <h1 class="text-[50px] text-gray-800 font-bold mb-[30px]" style="font-family: 'Poppins', sans-serif;">
+        <h1 class="text-[50px] text-gray-800 font-bold mb-[30px]">
           Turning Ideas into Robust Web & ERP Solutions
         </h1>
 
@@ -202,63 +237,128 @@
     </div>
   </section>
 
-  <section class="container mx-auto px-4 py-12 bg-gray-50 pt-20">
-    <!-- Subtitle -->
-    <h3 class="text-lime-500 text-[24px] uppercase tracking-wider text-center">
-      Portfolio
-    </h3>
-    <!-- Main Heading -->
-    <h2 class="text-[72px] font-bold text-gray-800 text-center mt-2 block">
-      My Works
-    </h2>
+  <section class="container mx-auto pt-20 px-4">
+    <!-- Title Section -->
+    <h3 class="text-lime-500 text-2xl uppercase tracking-wider text-center">Portfolio</h3>
+    <h2 class="text-5xl font-bold text-gray-800 text-center mt-2">My Works</h2>
 
-    <!-- Category Filters -->
-    <nav class="flex justify-center space-x-6 mt-6">
-      <a href="#" class="text-gray-700 font-medium hover:text-black transition-colors">
+    <!-- Filter Buttons -->
+    <div class="flex justify-center space-x-6 mt-6 flex-wrap">
+      <button class="filter-btn text-gray-700 font-medium hover:text-black transition-colors active hover:text-lime-500" data-filter="all">
         All
-      </a>
-      <a href="#" class="text-gray-700 font-medium hover:text-black transition-colors">
-        Frappe Projects
-      </a>
-      <a href="#" class="text-gray-700 font-medium hover:text-black transition-colors">
+      </button>
+      <button class="filter-btn text-gray-700 font-medium hover:text-black transition-colors hover:text-lime-500"
+        data-filter="web-development">
+        Web Development
+      </button>
+      <button class="filter-btn text-gray-700 font-medium hover:text-black transition-colors hover:text-lime-500"
+        data-filter="personal-portfolio">
         Personal Portfolio
-      </a>
-    </nav>
+      </button>
+    </div>
 
-    <!-- Grid Items -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-      <!-- Card 1 -->
-      <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-        <img src="https://via.placeholder.com/150" alt="Sample Icon" class="mx-auto" />
-        <h3 class="text-xl font-semibold mt-4">Project Title 1</h3>
-        <p class="text-gray-600 mt-2">A short description goes here.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-        <img src="https://via.placeholder.com/150" alt="Sample Icon" class="mx-auto" />
-        <h3 class="text-xl font-semibold mt-4">Project Title 2</h3>
-        <p class="text-gray-600 mt-2">A short description goes here.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-        <img src="https://via.placeholder.com/150" alt="Sample Icon" class="mx-auto" />
-        <h3 class="text-xl font-semibold mt-4">Project Title 3</h3>
-        <p class="text-gray-600 mt-2">A short description goes here.</p>
+    <!-- Cards Grid -->
+    <div class="w-full max-w-7xl mx-auto px-6 mt-12">
+      <!-- Project Cards Grid -->
+      <div class="flex flex-col gap-12">
+    
+        <!-- First Row -->
+        <div class="flex flex-wrap gap-12 justify-center">
+          
+          <!-- Flight Booking System -->
+          <section class="relative w-full rounded-[10px] md:w-[48%] overflow-hidden card opacity-0 transform translate-y-10 web-development">
+            <div class="group w-full h-[32rem] relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-500 hover:scale-105 shadow-2xl">
+              <!-- Image Slider -->
+              <div id="flight-slider" class="flex transition-transform duration-700 ease-in-out h-full">
+                <div class="min-w-full"><img src="public/Project Pics/online-booking-traveling-plane-flight-concept.jpg" alt="Flight Booking App" class="w-full h-full "></div>
+                <div class="min-w-full"><img src="public/Project Pics/airplane ticket.png" alt="Flight Booking App" class="w-full h-full "></div>
+                <div class="min-w-full"><img src="public/Project Pics/aiplane flight.png" alt="Flight Booking App" class="w-full h-full "></div>
+              </div>
+              <!-- Hover Effect -->
+              <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <h2 class="text-2xl font-bold">Flight Booking App</h2>
+                <p class="text-sm mt-2">Search, book, and manage flights with real-time updates. ✈️</p>
+              </div>
+            </div>
+          </section>
+    
+          <!-- Library Management System -->
+          <section class="relative w-full rounded-[10px] md:w-[48%] overflow-hidden card opacity-0 transform translate-y-10 web-development">
+            <div class="group w-full h-[32rem] relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-500 hover:scale-105 shadow-2xl">
+              <!-- Image Slider -->
+              <div id="library-slider" class="flex transition-transform duration-700 ease-in-out">
+                <div class="min-w-full"><img src="public/Project Pics/library mangement.jpg" alt="Library Management System" class="w-full h-full "></div>
+                <div class="min-w-full"><img src="public/Project Pics/library pics.png" alt="Library Management System" class="w-full h-full "></div>
+                <div class="min-w-full"><img src="public/Project Pics/library pic payment.png" alt="Library Management System" class="w-full h-full "></div>
+              </div>
+              <!-- Hover Effect -->
+              <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <h2 class="text-2xl font-bold">Library Management System</h2>
+                <p class="text-sm mt-2">Manage books, members, and transactions easily. 📚</p>
+              </div>
+            </div>
+          </section>
+    
+        </div>
+    
+        <!-- Second Row -->
+        <div class="flex flex-wrap gap-12  justify-center">
+          
+          <!-- Ride Booking App -->
+          <section class="relative w-full rounded-[10px] md:w-[48%] overflow-hidden card opacity-0 transform translate-y-10 web-development">
+            <a href="https://github.com/ehsanjavaid/rentals" target="_blank">
+              <div class="group w-full h-[32rem] relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-500 hover:scale-105 shadow-2xl">
+                <!-- Image Slider -->
+                <div id="ride-slider" class="flex transition-transform duration-700 ease-in-out">
+                  <div class="min-w-full"><img src="public/Project Pics/ride booking.jpg" alt="Ride Booking App" class="w-full h-full"></div>
+                  <div class="min-w-full"><img src="public/Project Pics/ride pic.png" alt="Ride Booking App" class="w-full h-full"></div>
+                  <div class="min-w-full"><img src="public/Project Pics/ride booking items.png" alt="Ride Booking App" class="w-full h-full"></div>
+                </div>
+                <!-- Hover Effect -->
+                <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  <h2 class="text-2xl font-bold">Ride Booking App</h2>
+                  <p class="text-sm mt-2">Book rides instantly with real-time tracking. 🚗</p>
+                </div>
+              </div>
+            </a>
+          </section>
+    
+          <!-- Personal Portfolio -->
+          <section class="relative h-full w-full rounded-[10px] md:w-[48%] overflow-hidden card opacity-0 transform translate-y-10 personal-portfolio">
+            <div class="group w-full h-[32rem] relative overflow-hidden rounded-lg cursor-pointer transform transition-all duration-500 hover:scale-105 shadow-2xl">
+              <!-- Image Slider -->
+              <div id="portfolio-slider" class="flex transition-transform duration-700 ease-in-out">
+                <div class="min-w-full"><img src="public/Project Pics/127.0.0.1_5500_index.html (1).png" alt="Personal Portfolio" class="w-full h-full"></div>
+                <div class="min-w-full"><img src="public/Project Pics/127.0.0.1_5500_index.html.png" alt="Personal Portfolio" class="w-full h-full "></div>
+              </div>
+              <!-- Hover Effect -->
+              <div class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <h2 class="text-2xl font-bold">Personal Portfolio</h2>
+                <p class="text-sm mt-2">Showcase your skills & projects in style. 🚀</p>
+              </div>
+            </div>
+          </section>
+    
+        </div>
+    
       </div>
     </div>
+    
+    
+
   </section>
-</body>
-
-</html>
 
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="gsap-animation.js"></script>
-<script>
-  AOS.init();
-</script>
+  <!-- JavaScript for Filtering -->
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="gsap-animation.js"></script>
+  <script src="https://unpkg.com/atropos/atropos.min.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
