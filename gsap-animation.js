@@ -1,3 +1,4 @@
+// import 'ldrs/ring';
 
 // Fade in Navbar from top
 gsap.from("nav", {
@@ -173,14 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
   startSlider("ride-slider");
   startSlider("portfolio-slider");
 });
-// <!-- Atropos Script -->
-{/* <script src="https://unpkg.com/atropos"></script> */}
-const myAtropos = Atropos({
-  el: '.my-atropos',
-  activeOffset: 40,
-  shadow: true,
-  duration: 300,
-});
+
 
 
 
