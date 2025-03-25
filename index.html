@@ -28,12 +28,15 @@
   }
 
   p {
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
     font-size: 18px;
     font-weight: 400;
     line-height: 1.7;
     color: #4d4d5c;
   }
+  /* .skill{
+    font-family: 'Play', sans-serif;
+  } */
 
   .card {
     perspective: 1000px;
@@ -94,40 +97,46 @@
 <body class="bg-gray-100 !important">
 
   <!-- NAVBAR (Absolute) -->
-  <nav class="fixed top-0 left-0 w-full z-50 " style="background-color: none;">
-    <div class="container mx-auto px-12 py-4 flex justify-between items-center">
-      <!-- Logo / Title -->
-      <img src="public/ahsanjavaid-high-resolution-logo.png" alt="Ahsan Javaid Logo" class="w-20 h-20 rounded-full" />
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50" style="background-color: none;">
+    <div class="container mx-auto md:px-12 px-4 py-[10px] flex justify-between items-center">
+        <!-- Logo / Title -->
+        <img src="public/ahsanjavaid-high-resolution-logo.png" alt="Ahsan Javaid Logo"
+            class="w-12 h-12 md:w-16 md:h-16 rounded-full" />
 
-      <!-- Desktop Links -->
-      <ul class="hidden md:flex space-x-6 text-lg">
-        <li><a href="#" class="text-white hover:text-lime-600 transition">Home</a></li>
-        <li><a href="#" class="text-white hover:text-lime-600 transition">About</a></li>
-        <li><a href="#" class="text-white hover:text-lime-600 transition">Works</a></li>
-        <li><a href="#" class="text-white hover:text-lime-600 transition">Contact</a></li>
-        <li><a href="#" class="text-white hover:text-lime-600 transition">Blog</a></li>
-      </ul>
+        <!-- Desktop Links -->
+        <ul class="hidden md:flex space-x-6 text-lg">
+            <li><a href="#home" class="text-white hover:text-lime-600 transition">Home</a></li>
+            <li><a href="#about-us" class="text-white hover:text-lime-600 transition">About</a></li>
+            <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Works</a></li>
+            <li><a href="#work-experience-section" class="text-white hover:text-lime-600 transition">Experience</a></li>
+            <li><a href="#education-section" class="text-white hover:text-lime-600 transition">Education</a></li>
+            <li><a href="#skills-section" class="text-white hover:text-lime-600 transition">Skills</a></li>
+        </ul>
 
-      <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
-        ☰
-      </button>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-gray-700 text-2xl focus:outline-none">
+            ☰
+        </button>
     </div>
 
-    <!-- Mobile Menu (Dropdown) -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white/80 px-8 py-4">
-      <ul class="space-y-4 text-lg">
-        <li><a href="#" class="block text-gray-700 hover:text-lime-600 transition">Home</a></li>
-        <li><a href="#" class="block text-gray-700 hover:text-lime-600 transition">About</a></li>
-        <li><a href="#" class="block text-gray-700 hover:text-lime-600 transition">Works</a></li>
-        <li><a href="#" class="block text-gray-700 hover:text-lime-600 transition">Contact</a></li>
-        <li><a href="#" class="block text-gray-700 hover:text-lime-600 transition">Blog</a></li>
-      </ul>
+    <!-- Mobile Menu (Right-Side Drawer) -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 w-[176px] bg-black/50  backdrop-blur-sm shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <button id="close-btn" class="absolute top-4 right-4 text-gray-800 text-3xl">&times;</button>
+        <ul class="mt-16 px-8 space-y-6 text-lg">
+            <li><a href="#home" class="block text-white hover:text-lime-600 transition">Home</a></li>
+            <li><a href="#about-us" class="block text-white hover:text-lime-600 transition">About</a></li>
+            <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Works</a></li>
+            <li><a href="#work-experience-section" class="block text-white hover:text-lime-600 transition">Experience</a></li>
+            <li><a href="#education-section" class="block text-white hover:text-lime-600 transition">Education</a></li>
+            <li><a href="#skills-section" class="block text-white hover:text-lime-600 transition">Skills</a></li>
+        </ul>
     </div>
-  </nav>
+</nav>
+
 
   <!-- HERO SECTION -->
-  <section class="flex flex-col-reverse md:flex-row h-screen items-center bg-[#F3F4F6]">
+  <section id="home" class="flex flex-col-reverse md:flex-row h-screen items-center bg-[#F3F4F6]">
     <!-- LEFT SIDE (Text) -->
     <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 pt-20 md:pt-24 text-center md:text-left">
       <p class="text-lime-500 text-lg md:text-xl">Hello!</p>
@@ -153,18 +162,18 @@
     <!-- On mobile, we want a portrait-style image: narrower, centered -->
     <div class="w-full md:w-1/2 h-64 md:h-auto relative flex justify-center items-center">
       <img id="hero-image" src="public/354186488_103641379446717_7754200830373512492_n.jpg" alt="Hero Image"
-        class="w-3/4 md:w-full h-auto object-cover rounded-xl shadow-lg">
+        class="w-full md:w-full h-auto object-cover  shadow-lg">
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="relative py-28 bg-gray-100">
+  <section id="about-us" class="relative py-28 bg-gray-100 reveal-section">
     <div class="container mx-auto flex flex-col md:flex-row items-center">
 
       <div class="relative w-full md:w-1/2 flex justify-center">
         <!-- Green Shape Behind the Image -->
-        <div class="absolute -left-10 bottom-0 w-40 h-40 bg-lime-400 -z-10 rounded-xl"></div>
-        <div class="absolute left-10 top-10 w-32 h-32 bg-lime-200 opacity-50 -z-10 rounded-xl"></div>
+        <!-- <div class="absolute -left-10 bottom-0 w-40 h-40 bg-lime-400 -z-10 rounded-xl"></div>
+        <div class="absolute left-10 top-10 w-32 h-32 bg-lime-200 opacity-50 -z-10 rounded-xl"></div> -->
 
         <!-- Profile Image Container -->
         <div class="relative w-4/5 h-auto overflow-hidden rounded-xl shadow-lg group">
@@ -226,7 +235,7 @@
     </div>
   </section>
   <!-- Stats Section -->
-  <section class="bg-gray-800 text-white py-10">
+  <section id="stats-section" class="bg-gray-800 text-white py-10 reveal-section">
     <div
       class="container mx-auto flex flex-col md:flex-row justify-evenly items-center text-center space-y-8 md:space-y-0">
 
@@ -267,8 +276,8 @@
 
     </div>
   </section>
-
-  <section class="container mx-auto pt-20 px-4">
+<!-- my work portfolio -->
+  <section id="my-work-section" class="container mx-auto pt-20 px-4 reveal-section">
     <!-- Title Section -->
     <h3 class="text-lime-500 text-2xl uppercase tracking-wider text-center">Portfolio</h3>
     <h2 class="text-5xl font-bold text-gray-800 text-center mt-2">My Works</h2>
@@ -315,9 +324,9 @@
                 </div>
                 <!-- Hover Effect -->
                 <div
-                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center ">
                   <h2 class="text-2xl font-bold">Flight Booking App</h2>
-                  <p class="text-sm mt-2">Search, book, and manage flights with real-time updates. ✈️</p>
+                  <p class="text-sm mt-2 text-white">Search, book, and manage flights with real-time updates. ✈️</p>
                 </div>
               </div>
             </a>
@@ -340,9 +349,9 @@
                 </div>
                 <!-- Hover Effect -->
                 <div
-                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center ">
                   <h2 class="text-2xl font-bold">Library Management System</h2>
-                  <p class="text-sm mt-2">Manage books, members, and transactions easily. 📚</p>
+                  <p class="text-sm mt-2 text-white">Manage books, members, and transactions easily. 📚</p>
                 </div>
               </div>
             </a>
@@ -370,9 +379,9 @@
                 </div>
                 <!-- Hover Effect -->
                 <div
-                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center">
                   <h2 class="text-2xl font-bold">Ride Booking App</h2>
-                  <p class="text-sm mt-2">Book rides instantly with real-time tracking. 🚗</p>
+                  <p class="text-sm mt-2 text-white">Book rides instantly with real-time tracking. 🚗</p>
                 </div>
               </div>
             </a>
@@ -393,9 +402,9 @@
                 </div>
                 <!-- Hover Effect -->
                 <div
-                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                  class="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 text-white p-6 text-center">
                   <h2 class="text-2xl font-bold">Personal Portfolio</h2>
-                  <p class="text-sm mt-2">Showcase your skills & projects in style. 🚀</p>
+                  <p class="text-sm mt-2 text-white">Showcase your skills & projects in style. 🚀</p>
                 </div>
               </div>
             </a>
@@ -406,7 +415,8 @@
       </div>
     </div>
   </section>
-  <section class="flex flex-col-reverse md:flex-row items-center w-full px-6 mt-20 bg-white">
+  <!-- work experience seciton -->
+  <section id="work-experience-section" class="flex flex-col-reverse md:flex-row items-center w-full px-6 mt-20 bg-white reveal-section">
     <!-- Left: Image -->
     <div class="w-full md:w-1/2 flex justify-center md:justify-start">
       <img src="public/work-img.jpg" alt="Work Experience" class="w-[80%] md:w-full h-auto rounded-lg shadow-lg">
@@ -484,12 +494,145 @@
       </div>
     </div>
   </section>
+<!-- Education Section -->
+<section id="education-section" class="bg-gray-100 pt-[165px] max-w-[1350px] mx-auto reveal-section">
+  <div class="container mx-auto px-6 md:px-12 lg:px-20">
+    <div class="flex flex-col md:flex-row items-center">
+      
+      <!-- Left Side: Education Content -->
+      <div class="w-full md:w-1/2">
+        <h3 class="text-lime-500 font-bold text-[24px]">Education</h3>
+        <h2 class="text-[32px] md:text-[72px] font-bold text-gray-900">My Education</h2>
+        <p class="text-gray-600 mt-3 text-[18px]">Enhancing knowledge through continuous learning and hands-on experience.</p>
 
-  <!-- JavaScript for Filtering -->
+        <!-- Education Cards -->
+        <div class="mt-6 space-y-6">
+          <!-- Education Item 1 -->
+          <div class="flex items-start space-x-4">
+            <div class="bg-green-500 w-12 h-12 flex items-center justify-center rounded-lg">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 16v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h4m10 8h-4m0 0H8m4 0V4m0 4v8" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-[24px] font-semibold text-gray-900">Bachelor in Computer Science</h4>
+              <p class="font-bold text-gray-700 text-[21px]">Govt College University Of Faisalabad <span class="text-gray-500 text-[16px]">(2018 - 2022)</span></p>
+              <p class="text-gray-600 text-sm mt-1 text-[18px]">Focused on software development, web technologies, and system architecture.</p>
+            </div>
+          </div>
+
+          <!-- Education Item 2 -->
+          <div class="flex items-start space-x-4">
+            <div class="bg-green-500 w-12 h-12 flex items-center justify-center rounded-lg">
+              <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 16v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h4m10 8h-4m0 0H8m4 0V4m0 4v8" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-[24px] font-semibold text-gray-900">Intermediate in Computer Science</h4>
+              <p class="font-bold text-gray-700 text-[21px]">ILM College <span class="text-gray-500 text-[16px]">(2016 - 2018)</span></p>
+              <p class="text-gray-600 text-sm mt-1 text-[18px]">Studied programming, mathematics, and networking fundamentals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Image with Animation -->
+      <div class="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
+        <img id="eduImage" src="public/education-img.jpg" alt="Education" class="w-full max-w-sm rounded-lg shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+
+<section id="skills-section" class="container mx-auto flex flex-col lg:flex-row items-center pt-[155px] pb-[105px] justify-between px-6 lg:px-10 max-w-[1350px] reveal-section">
+  <!-- Left Side (Text) -->
+  <div class="w-full lg:w-1/2 text-center lg:text-left">
+      <p class="text-green-500 text-lg font-bold">My Skill</p>
+      <h2 class="text-gray-900 text-4xl lg:text-5xl font-bold">Growing Over Times</h2>
+      <p class="text-gray-500 mt-2">Enhancing Skills, Expanding Possibilities</p>
+  </div>
+
+  <!-- Right Side (Skill Circles) -->
+  <div class="w-full lg:w-1/2 flex flex-wrap justify-center lg:justify-end gap-10 mt-8 lg:mt-0">
+      <!-- Skill 1 -->
+      <div class="text-center">
+        <div class="relative w-[178px] h-[178px]">
+            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 178 178">
+                <!-- Background Circle -->
+                <circle cx="89" cy="89" r="80" stroke="#d1d5db" stroke-width="5" fill="none"></circle>
+    
+                <!-- Progress Circle -->
+                <circle cx="89" cy="89" r="80" stroke="#84cc16" stroke-width="5" fill="none"
+                    stroke-dasharray="0,502" stroke-linecap="round"
+                    class="progress-circle" data-target="90">
+                </circle>
+            </svg>
+    
+            <!-- Percentage Text -->
+            <p class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-gray-900 percentage text-[38px]"
+                data-target="90">0%</p>
+        </div>
+        <p class="skill text-[#2E2E37] mt-2 text-[24px]">Web<br>Development</p>
+    </div>
+    
+
+      <!-- Skill 2 -->
+      <div class="text-center">
+        <div class="relative w-[178px] h-[178px]">
+            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 178 178">
+                <!-- Background Circle -->
+                <circle cx="89" cy="89" r="80" stroke="#d1d5db" stroke-width="5" fill="none"></circle>
+    
+                <!-- Progress Circle -->
+                <circle cx="89" cy="89" r="80" stroke="#84cc16" stroke-width="5" fill="none"
+                    stroke-dasharray="0,502" stroke-linecap="round"
+                    class="progress-circle" data-target="75">
+                </circle>
+            </svg>
+    
+            <!-- Percentage Text -->
+            <p class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-gray-900 percentage text-[38px]"
+                data-target="75">0%</p>
+        </div>
+        <p class="skill text-[#2E2E37] mt-2 text-[24px]">Frappe<br>Application</p>
+    </div>
+    
+
+      <!-- Skill 3 -->
+      <div class="text-center">
+        <div class="relative w-[178px] h-[178px]">
+            <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 178 178">
+                <!-- Background Circle -->
+                <circle cx="89" cy="89" r="80" stroke="#d1d5db" stroke-width="5" fill="none"></circle>
+    
+                <!-- Progress Circle -->
+                <circle cx="89" cy="89" r="80" stroke="#84cc16" stroke-width="5" fill="none"
+                    stroke-dasharray="0,502" stroke-linecap="round"
+                    class="progress-circle" data-target="85">
+                </circle>
+            </svg>
+    
+            <!-- Percentage Text -->
+            <p class="absolute inset-0 flex items-center justify-center text-2xl font-bold text-gray-900 percentage text-[38px]"
+                data-target="85">0%</p>
+        </div>
+        <p class="skill text-[#2E2E37] mt-2 text-[24px]">Autocad<br>Designing</p>
+    </div>
+    
+  </div>
+</section>
 
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="gsap-animation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
   <script src="https://unpkg.com/atropos/atropos.min.js"></script>
 
 

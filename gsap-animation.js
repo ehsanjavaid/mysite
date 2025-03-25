@@ -32,6 +32,27 @@ gsap.from("#hero-image", {
   delay: 0.3,
   ease: "power2.out"
 });
+// Script to move section from bottion to top animation 
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".reveal-section").forEach(section => {
+    gsap.fromTo(section,
+      { opacity: 0, y: 100 }, // Start Position
+      {
+        opacity: 1, y: 0, // End Position
+        duration: 3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 80%", // Starts animation when 80% of the section is in view
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  });
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   // Fade and slide in from the left
   gsap.from("#profile-container", {
@@ -64,13 +85,52 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Initializing AOS
 AOS.init();
+// open menu on right side
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+
+// Open Menu
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-full");
+  mobileMenu.classList.add("translate-x-0");
+});
+
+// Close Menu
+closeBtn.addEventListener("click", () => {
+  mobileMenu.classList.remove("translate-x-0");
+  mobileMenu.classList.add("translate-x-full");
+});
+// JavaScript for Sticky Navbar & Mobile Menu 
+
+// Sticky Navbar on Scroll
+window.addEventListener("scroll", function () {
+  let navbar = document.getElementById("navbar");
+
+  if (window.scrollY > 50) {
+      navbar.classList.add("bg-white", "shadow-lg");
+      navbar.classList.remove("bg-transparent");
+      navbar.querySelectorAll("a").forEach(link => {
+          link.classList.add("text-black");
+          link.classList.remove("text-white");
+      });
+  } else {
+      navbar.classList.add("bg-transparent");
+      navbar.classList.remove("bg-white", "shadow-lg");
+      navbar.querySelectorAll("a").forEach(link => {
+          link.classList.add("text-white");
+          link.classList.remove("text-black");
+      });
+  }
+});
 
 // Mobile Menu Toggle
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+document.getElementById("menu-btn").addEventListener("click", function () {
+  document.getElementById("mobile-menu").classList.remove("translate-x-full");
+});
 
-menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
+document.getElementById("close-btn").addEventListener("click", function () {
+  document.getElementById("mobile-menu").classList.add("translate-x-full");
 });
 
 // Typing Animation
@@ -151,12 +211,12 @@ document.querySelectorAll('.card').forEach(card => {
 //  for slides js
 document.addEventListener("DOMContentLoaded", function () {
   // GSAP Animation for Cards
-  gsap.to(".card", { 
-    opacity: 1, 
-    y: 0, 
-    duration: 1, 
-    stagger: 0.3, 
-    ease: "power3.out" 
+  gsap.to(".card", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power3.out"
   });
 
   // Auto Image Slider
@@ -174,7 +234,43 @@ document.addEventListener("DOMContentLoaded", function () {
   startSlider("ride-slider");
   startSlider("portfolio-slider");
 });
+// education section image animation
+gsap.from("#eduImage", {
+  opacity: 0,
+  x: 100, // Starts from right
+  duration: 1,
+  ease: "power2.out"
+});
 
+// skills section animation
+function animateSkills() {
+  const counters = document.querySelectorAll('.percentage');
+  const circles = document.querySelectorAll('.progress-circle');
 
+  counters.forEach((counter, index) => {
+    let target = parseInt(counter.getAttribute('data-target'));
 
+    // Animate Percentage Number
+    gsap.to(counter, {
+      innerText: target,
+      duration: 2,
+      snap: { innerText: 1 },
+      ease: "power2.out",
+      onUpdate: function () {
+        counter.innerText = Math.round(counter.innerText) + "%";
+      }
+    });
 
+    // Animate Progress Circle
+    let circle = circles[index];
+    let circumference = 502; // Adjusted for 178px width/height
+    gsap.to(circle, {
+      strokeDasharray: `${(target / 100) * circumference}, 502`,
+      duration: 2,
+      ease: "power2.out"
+    });
+  });
+}
+
+// Run animation on window load
+window.onload = animateSkills;
