@@ -17,6 +17,10 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- font family -->
   <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awarsome -->
+  <script src="https://kit.fontawesome.com/41e65f5df5.js" crossorigin="anonymous"></script>
+
   <!-- Idrs font -->
   <l-ring size="60" color="coral"></l-ring>
 
@@ -106,12 +110,13 @@
 
       <!-- Desktop Links -->
       <ul class="hidden md:flex space-x-6 text-lg">
-        <li><a href="#home" class="text-white hover:text-lime-600 transition">Home</a></li>
-        <li><a href="#about-us" class="text-white hover:text-lime-600 transition">About</a></li>
-        <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Works</a></li>
+        <li><a href="#home" class="nav-link text-white hover:text-lime-600 transition">Home</a></li>
+        <li><a href="#about-us" class="nav-link text-white hover:text-lime-600 transition">About</a></li>
+        <li><a href="#my-work-section" class="nav-link text-white hover:text-lime-600 transition">Works</a></li>
         <!-- <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Experience</a></li> -->
         <!-- <li><a href="#education-section" class="text-white hover:text-lime-600 transition">Education</a></li> -->
-        <li><a href="#service" class="text-white hover:text-lime-600 transition">Service</a></li>
+        <li><a href="#service" class="nav-link text-white hover:text-lime-600 transition">Service</a></li>
+        <li><a href="#contact" class="nav-link text-white hover:text-lime-600 transition">Contact</a></li>
       </ul>
 
       <!-- Mobile Menu Button -->
@@ -131,6 +136,7 @@
         <!-- <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Experience</a></li> -->
         <!-- <li><a href="#education-section" class="block text-white hover:text-lime-600 transition">Education</a></li> -->
         <li><a href="#service" class="block text-white hover:text-lime-600 transition">Service</a></li>
+        <li><a href="#contact" class="block text-white hover:text-lime-600 transition">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -725,7 +731,83 @@
   </div>
 </section>
 
+<!-- Contact Us Section  -->
 
+<section id="contact" class="bg-[#F9FAFB] py-16 px-4 relative">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+     <!-- Top Section -->
+    <div class="col-span-2 text-center">
+      <h3 class="text-lime-500 text-[24px] font-bold mb-[6px]">Contact Me</h3>
+      <h2 class="text-gray-900 md:text-[72px] text-[32px] font-bold leading-tight">Let's Start A New Project</h2>
+    </div>
+
+     <!-- Contact Info -->
+     <div class="flex flex-col md:flex-row md:w-[1350px] w-full">
+      <div class="order-1 md:order-none space-y-8 w-full">
+        <div class="space-y-6 max-w-[1350px] w-full">
+          <!-- Location -->
+          <div class="flex items-center gap-4">
+            <div class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Location</h4>
+              <p class="text-gray-600 text-[16px] md:text-[18px]">Firozpur Road, Lahore, Pakistan</p>
+            </div>
+          </div>
+    
+          <!-- Phone -->
+          <div class="flex items-center gap-4">
+            <div class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div>
+              <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Phone</h4>
+              <p class="text-gray-600 text-[16px] md:text-[18px]">+923284458706</p>
+            </div>
+          </div>
+    
+          <!-- Email -->
+          <div class="flex items-center gap-4">
+            <div class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Email</h4>
+              <p class="text-gray-600 text-[16px] md:text-[18px]">ehsanjavaid321@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Contact Form -->
+      <form class="order-2 md:order-none p-4 sm:p-6 md:p-8 rounded-xl space-y-4 sm:space-y-6 w-full max-w-[675px] reveal-section">
+        <div class="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6">
+          <input type="text" placeholder="Your Name" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+          <input type="email" placeholder="Your Email" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+          <input type="tel" placeholder="Your Phone" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+          <input type="text" placeholder="Your Subject" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+        </div>
+        <textarea placeholder="Start writing message here" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100 h-28 sm:h-32 md:h-40"></textarea>
+        <button type="submit" class="w-full md:w-[199px] bg-lime-500 text-white py-3 text-lg font-semibold rounded-lg hover:bg-lime-600 transition">
+          Submit Now
+        </button>
+      </form>
+      
+    </div>
+    
+
+  </div>
+</section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" 
+        class="hidden fixed bottom-6 right-6 w-14 h-14 bg-lime-500 text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 hover:bg-lime-600">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+        </svg>
+    </button>
 
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

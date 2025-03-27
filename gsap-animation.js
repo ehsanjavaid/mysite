@@ -108,19 +108,19 @@ window.addEventListener("scroll", function () {
   let navbar = document.getElementById("navbar");
 
   if (window.scrollY > 50) {
-      navbar.classList.add("bg-white", "shadow-lg");
-      navbar.classList.remove("bg-transparent");
-      navbar.querySelectorAll("a").forEach(link => {
-          link.classList.add("text-black");
-          link.classList.remove("text-white");
-      });
+    navbar.classList.add("bg-white", "shadow-lg");
+    navbar.classList.remove("bg-transparent");
+    navbar.querySelectorAll("a").forEach(link => {
+      link.classList.add("text-black");
+      link.classList.remove("text-white");
+    });
   } else {
-      navbar.classList.add("bg-transparent");
-      navbar.classList.remove("bg-white", "shadow-lg");
-      navbar.querySelectorAll("a").forEach(link => {
-          link.classList.add("text-white");
-          link.classList.remove("text-black");
-      });
+    navbar.classList.add("bg-transparent");
+    navbar.classList.remove("bg-white", "shadow-lg");
+    navbar.querySelectorAll("a").forEach(link => {
+      link.classList.add("text-white");
+      link.classList.remove("text-black");
+    });
   }
 });
 
@@ -285,13 +285,51 @@ document.querySelectorAll('.price-box').forEach(box => {
   });
 });
 // add button animation
- // Select all buttons with the class "animated-btn"
- document.querySelectorAll(".animated-btn").forEach(button => {
+// Select all buttons with the class "animated-btn"
+document.querySelectorAll(".animated-btn").forEach(button => {
   button.addEventListener("mouseenter", () => {
-      gsap.to(button, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+    gsap.to(button, { scale: 1.1, duration: 0.3, ease: "power2.out" });
   });
 
   button.addEventListener("mouseleave", () => {
-      gsap.to(button, { scale: 1, duration: 0.3, ease: "power2.out" });
+    gsap.to(button, { scale: 1, duration: 0.3, ease: "power2.out" });
   });
 });
+// back to top 
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.classList.remove("hidden");
+  } else {
+    backToTop.classList.add("hidden");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+// Navbar active section behavior
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+
+function changeActiveSection() {
+  let scrollPosition = window.scrollY;
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    const sectionHeight = section.clientHeight;
+    const sectionId = section.getAttribute("id");
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      navLinks.forEach(link => {
+        link.classList.remove("text-lime-500");
+        if (link.getAttribute("href") === `#${sectionId}`) {
+          link.classList.add("text-lime-500");
+        }
+      });
+    }
+  });
+}
+
+window.addEventListener("scroll", changeActiveSection);
