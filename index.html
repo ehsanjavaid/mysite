@@ -95,7 +95,7 @@
   }
 </style>
 
-<body class="bg-gray-100 !important">
+<body class="bg-[#FFFFFF] !important">
 
   <!-- NAVBAR (Absolute) -->
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50" style="background-color: none;">
@@ -111,7 +111,7 @@
         <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Works</a></li>
         <!-- <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Experience</a></li> -->
         <!-- <li><a href="#education-section" class="text-white hover:text-lime-600 transition">Education</a></li> -->
-        <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Skills</a></li>
+        <li><a href="#service" class="text-white hover:text-lime-600 transition">Service</a></li>
       </ul>
 
       <!-- Mobile Menu Button -->
@@ -130,14 +130,14 @@
         <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Works</a></li>
         <!-- <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Experience</a></li> -->
         <!-- <li><a href="#education-section" class="block text-white hover:text-lime-600 transition">Education</a></li> -->
-        <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Skills</a></li>
+        <li><a href="#service" class="block text-white hover:text-lime-600 transition">Service</a></li>
       </ul>
     </div>
   </nav>
 
 
   <!-- HERO SECTION -->
-  <section id="home" class="flex flex-col-reverse md:flex-row h-screen items-center bg-[#F3F4F6]">
+  <section id="home" class="flex flex-col-reverse md:flex-row h-screen items-center">
     <!-- LEFT SIDE (Text) -->
     <div class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-16 pt-20 md:pt-24 text-center md:text-left">
       <p class="text-lime-500 text-lg md:text-xl">Hello!</p>
@@ -168,7 +168,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about-us" class="relative py-28 bg-gray-100 reveal-section">
+  <section id="about-us" class="relative py-28 reveal-section">
     <div class="container mx-auto flex flex-col md:flex-row items-center">
 
       <div class="relative w-full md:w-1/2 flex justify-center">
@@ -494,7 +494,7 @@
     </div>
   </section>
   <!-- Education Section -->
-  <section id="my-work-section" class="bg-gray-100 pt-[165px] max-w-[1350px] mx-auto reveal-section">
+  <section id="my-work-section" class=" pt-[165px] max-w-[1350px] mx-auto reveal-section">
     <div class="container mx-auto px-6 md:px-12 lg:px-20">
       <div class="flex flex-col md:flex-row items-center">
 
@@ -631,12 +631,12 @@
   </section>
 
 <!-- Pricing Section -->
-<section class=" bg-[#F0F9FA] flex flex-col items-center min-h-screen pt-[155px] pb-[140px] px-4">
+<section id="my-work-section" class=" bg-[#F0F9FA] flex flex-col items-center min-h-screen pt-[155px] pb-[140px] px-4">
   <!-- Title Section -->
   <h3 class="text-lime-500 text-[24px] mb-[2px] font-bold tracking-wider text-center">Let's Start Working</h3>
   <h2 class="text-[72px] font-bold text-gray-800 text-center">Pricing Plans</h2>
 
-  <div class=" reveal-section max-w-[1350px] w-full flex flex-wrap justify-center gap-6 mt-[80px]">
+  <div class=" reveal-section max-w-[1350px] w-full flex flex-wrap justify-center gap-6 mt-[80px] reveal-section">
     <!-- Hourly Plan -->
     <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
       <h2 class="text-[30px] font-semibold text-gray-800">Hourly</h2>
@@ -684,6 +684,46 @@
   </div>
 </section>
 
+<div class="border-t border-gray-300 mx-auto max-w-[1350px]"></div>
+
+<!-- Services Section -->
+<section id="service" class="bg-[#F0F9FA] py-16">
+  <div class="max-w-7xl mx-auto text-center px-4">
+    <h3 class="text-lime-500 text-[24px]">Service</h3>
+    <h2 class="text-[72px] font-bold text-gray-800 text-4xl sm:text-5xl md:text-[72px]">What I Do</h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-[1350px] mx-auto mt-[80px] px-4 md:px-6">
+    
+    <!-- Web Development -->
+    <div class="w-full md:w-[651px] bg-white rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px]">
+      <img src="public/Project Pics/service-icon-1.png" class="w-[72px] h-[70px] object-contain" alt="Web Development Icon">
+      <div class="px-[12px]">
+        <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">Web Development</h3>
+        <p class="text-gray-600 text-[16px] sm:text-[18px]">Creating modern, responsive websites using Tailwind CSS, JavaScript, and Frappe.</p>
+      </div>
+    </div>
+
+    <!-- Software Development -->
+    <div class="w-full md:w-[651px] bg-white rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px]">
+      <img src="public/Project Pics/ahsanjavaid-high-resolution-logo.png" class="w-[72px] h-[70px] object-contain" alt="Software Development Icon">
+      <div class="px-[12px]">
+        <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">Software Development</h3>
+        <p class="text-gray-600 text-[16px] sm:text-[18px]">Building powerful applications with Frappe, Python, and backend systems.</p>
+      </div>
+    </div>
+
+    <!-- System Development (Centered) -->
+    <div class="w-full bg-white rounded-2xl shadow-lg flex flex-col items-center text-center gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px] md:col-span-2">
+      <img src="public/Project Pics/frappe icon.png" class="w-[72px] h-[70px] object-contain" alt="System Development Icon">
+      <div class="px-[12px]">
+        <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">System Development</h3>
+        <p class="text-gray-600 text-[16px] sm:text-[18px]">Developing advanced ERP systems using Frappe and custom APIs.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 
@@ -696,9 +736,6 @@
   <script src="https://unpkg.com/atropos/atropos.min.js"></script>
 
 
-  <script>
-    AOS.init();
-  </script>
 </body>
 
 </html>
