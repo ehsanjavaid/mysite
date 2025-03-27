@@ -274,3 +274,24 @@ function animateSkills() {
 
 // Run animation on window load
 window.onload = animateSkills;
+
+// Pricing Section animation
+document.querySelectorAll('.price-box').forEach(box => {
+  box.addEventListener('mouseenter', () => {
+    gsap.to(box, { y: -10, duration: 0.3, ease: "power1.out" });
+  });
+  box.addEventListener('mouseleave', () => {
+    gsap.to(box, { y: 0, duration: 0.3, ease: "power1.out" });
+  });
+});
+// add button animation
+ // Select all buttons with the class "animated-btn"
+ document.querySelectorAll(".animated-btn").forEach(button => {
+  button.addEventListener("mouseenter", () => {
+      gsap.to(button, { scale: 1.1, duration: 0.3, ease: "power2.out" });
+  });
+
+  button.addEventListener("mouseleave", () => {
+      gsap.to(button, { scale: 1, duration: 0.3, ease: "power2.out" });
+  });
+});
