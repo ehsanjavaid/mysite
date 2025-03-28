@@ -335,24 +335,17 @@ function changeActiveSection() {
 window.addEventListener("scroll", changeActiveSection);
 // submit form scrip
 document.getElementById("contact-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const formData = new FormData(this);
-  const jsonData = Object.fromEntries(formData.entries());
-
-  fetch("https://script.google.com/macros/s/AKfycbxXAuTQHhpYOS85_JrrGtjBUnfPXMGR9OEEKN4S5FXExQXLp3fZeO59OXk_2qVWbDRs/exec", { 
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(jsonData),
-  })
-  .then(response => response.json())  // Convert response to JSON
-  .then(data => {
-    if (data.status === "success") {
-      alert("✅ Form submitted successfully!");
-      document.getElementById("contact-form").reset();
-    } else {
-      alert("❌ Error: " + data.message);
-    }
-  })
-  .catch(error => alert("❌ Error submitting form! " + error));
+  event.preventDefault(); // Prevent actual submission
+  
+  const successMessage = document.getElementById("success-message");
+  
+  // Show the message with animation
+  successMessage.classList.remove("hidden");
+  successMessage.classList.add("opacity-100");
+  
+  // Hide the message after 3 seconds
+  setTimeout(() => {
+    successMessage.classList.add("opacity-0");
+    setTimeout(() => successMessage.classList.add("hidden"), 500);
+  }, 3000);
 });

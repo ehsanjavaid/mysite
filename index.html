@@ -99,6 +99,15 @@
   .group:hover .icon {
     animation: moveIcon 0.5s ease-in-out;
   }
+
+  /* Smooth fade-in and fade-out effect */
+  .opacity-0 {
+    opacity: 0;
+  }
+
+  .opacity-100 {
+    opacity: 1;
+  }
 </style>
 
 <body class="bg-[#FFFFFF] !important">
@@ -107,16 +116,13 @@
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50" style="background-color: none;">
     <div class="container mx-auto md:px-12 px-4 py-[10px] flex justify-between items-center">
       <!-- Logo / Title -->
-      <img src="public/logo.png" alt="Ahsan Javaid Logo"
-        class="w-12 h-12 md:w-16 md:h-16" />
+      <img src="public/logo.png" alt="Ahsan Javaid Logo" class="w-12 h-12 md:w-16 md:h-16" />
 
       <!-- Desktop Links -->
       <ul class="hidden md:flex space-x-6 text-lg">
         <li><a href="#home" class="nav-link text-white hover:text-lime-600 transition">Home</a></li>
         <li><a href="#about-us" class="nav-link text-white hover:text-lime-600 transition">About</a></li>
         <li><a href="#my-work-section" class="nav-link text-white hover:text-lime-600 transition">Works</a></li>
-        <!-- <li><a href="#my-work-section" class="text-white hover:text-lime-600 transition">Experience</a></li> -->
-        <!-- <li><a href="#education-section" class="text-white hover:text-lime-600 transition">Education</a></li> -->
         <li><a href="#service" class="nav-link text-white hover:text-lime-600 transition">Service</a></li>
         <li><a href="#contact" class="nav-link text-white hover:text-lime-600 transition">Contact</a></li>
       </ul>
@@ -135,8 +141,6 @@
         <li><a href="#home" class="block text-white hover:text-lime-600 transition">Home</a></li>
         <li><a href="#about-us" class="block text-white hover:text-lime-600 transition">About</a></li>
         <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Works</a></li>
-        <!-- <li><a href="#my-work-section" class="block text-white hover:text-lime-600 transition">Experience</a></li> -->
-        <!-- <li><a href="#education-section" class="block text-white hover:text-lime-600 transition">Education</a></li> -->
         <li><a href="#service" class="block text-white hover:text-lime-600 transition">Service</a></li>
         <li><a href="#contact" class="block text-white hover:text-lime-600 transition">Contact</a></li>
       </ul>
@@ -638,178 +642,214 @@
     </div>
   </section>
 
-<!-- Pricing Section -->
-<section id="my-work-section" class=" bg-[#F0F9FA] flex flex-col items-center min-h-screen pt-[155px] pb-[140px] px-4">
-  <!-- Title Section -->
-  <h3 class="text-lime-500 text-[24px] mb-[2px] font-bold tracking-wider text-center">Let's Start Working</h3>
-  <h2 class="text-[72px] font-bold text-gray-800 text-center">Pricing Plans</h2>
+  <!-- Pricing Section -->
+  <section id="my-work-section"
+    class=" bg-[#F0F9FA] flex flex-col items-center min-h-screen pt-[155px] pb-[140px] px-4">
+    <!-- Title Section -->
+    <h3 class="text-lime-500 text-[24px] mb-[2px] font-bold tracking-wider text-center">Let's Start Working</h3>
+    <h2 class="text-[72px] font-bold text-gray-800 text-center">Pricing Plans</h2>
 
-  <div class=" reveal-section max-w-[1350px] w-full flex flex-wrap justify-center gap-6 mt-[80px] reveal-section">
-    <!-- Hourly Plan -->
-    <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
-      <h2 class="text-[30px] font-semibold text-gray-800">Hourly</h2>
-      <hr class="my-4">
-      <p class="text-[#98C949] text-[60px] font-bold">$12 <span class="text-lg font-normal text-black font-bold">/ Per Hour</span></p>
-      <ul class="mt-4 text-gray-700 space-y-2">
-        <li>✅ One time contract</li>
-        <li>✅ Flexible Contract</li>
-        <li>✅ Source Files</li>
-        <li>❌ Support</li>
-        <li>❌ Updates</li>
-      </ul>
-      <button class="bg-[#98C949] animated-btn text-white px-[35px] py-[10px] font-bold mt-[25px] rounded-lg hover:bg-[#98C949] text-[18px]">Start Now</button>
-    </div>
+    <div class=" reveal-section max-w-[1350px] w-full flex flex-wrap justify-center gap-6 mt-[80px] reveal-section">
+      <!-- Hourly Plan -->
+      <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
+        <h2 class="text-[30px] font-semibold text-gray-800">Hourly</h2>
+        <hr class="my-4">
+        <p class="text-[#98C949] text-[60px] font-bold">$12 <span class="text-lg font-normal text-black font-bold">/ Per
+            Hour</span></p>
+        <ul class="mt-4 text-gray-700 space-y-2">
+          <li>✅ One time contract</li>
+          <li>✅ Flexible Contract</li>
+          <li>✅ Source Files</li>
+          <li>❌ Support</li>
+          <li>❌ Updates</li>
+        </ul>
+        <button
+          class="bg-[#98C949] animated-btn text-white px-[35px] py-[10px] font-bold mt-[25px] rounded-lg hover:bg-[#98C949] text-[18px]">Start
+          Now</button>
+      </div>
 
-    <!-- Project Basis Plan -->
-    <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
-      <h2 class="text-[30px] font-semibold text-gray-800">Project Basis</h2>
-      <hr class="my-4">
-      <p class="text-[#98C949] text-[60px] font-bold">$20 <span class="text-lg font-normal text-black font-bold">/ Per Hour</span></p>
-      <ul class="mt-4 text-gray-700 space-y-2">
-        <li>✅ One time contract</li>
-        <li>✅ Flexible Contract</li>
-        <li>✅ Source Files</li>
-        <li>✅ Support</li>
-        <li>❌ Updates</li>
-      </ul>
-      <button class="bg-[#98C949] animated-btn text-white px-[35px] py-[10px] font-bold rounded-lg mt-[25px] hover:bg-[#98C949] text-[18px]">Start Now</button>
-    </div>
+      <!-- Project Basis Plan -->
+      <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
+        <h2 class="text-[30px] font-semibold text-gray-800">Project Basis</h2>
+        <hr class="my-4">
+        <p class="text-[#98C949] text-[60px] font-bold">$20 <span class="text-lg font-normal text-black font-bold">/ Per
+            Hour</span></p>
+        <ul class="mt-4 text-gray-700 space-y-2">
+          <li>✅ One time contract</li>
+          <li>✅ Flexible Contract</li>
+          <li>✅ Source Files</li>
+          <li>✅ Support</li>
+          <li>❌ Updates</li>
+        </ul>
+        <button
+          class="bg-[#98C949] animated-btn text-white px-[35px] py-[10px] font-bold rounded-lg mt-[25px] hover:bg-[#98C949] text-[18px]">Start
+          Now</button>
+      </div>
 
-    <!-- Monthly Plan -->
-    <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
-      <h2 class="text-[30px] font-semibold text-gray-800">Monthly</h2>
-      <hr class="my-4">
-      <p class="text-[#98C949] text-[60px] font-bold">$30 <span class="text-lg font-normal text-black font-bold">/ Per Hour</span></p>
-      <ul class="mt-4 text-gray-700 space-y-2">
-        <li>✅ One time contract</li>
-        <li>✅ Flexible Contract</li>
-        <li>✅ Source Files</li>
-        <li>✅ Support</li>
-        <li>✅ Updates</li>
-      </ul>
-      <button class="bg-[#98C949] animated-btn text-white px-[35px] py-[10px] font-bold mt-[25px] rounded-lg hover:bg-[#98C949] text-[18px]">Start Now</button>
-    </div>
-  </div>
-</section>
-
-<div class="border-t border-gray-300 mx-auto max-w-[1350px]"></div>
-
-<!-- Services Section -->
-<section id="service" class="bg-[#F0F9FA] py-16">
-  <div class="max-w-7xl mx-auto text-center px-4">
-    <h3 class="text-lime-500 text-[24px]">Service</h3>
-    <h2 class="text-[72px] font-bold text-gray-800 text-4xl sm:text-5xl md:text-[72px]">What I Do</h2>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-[1350px] mx-auto mt-[80px] px-4 md:px-6">
-    
-    <!-- Web Development -->
-    <div class="w-full md:w-[651px] bg-white rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px]">
-      <img src="public/Project Pics/service-icon-1.png" class="w-[72px] h-[70px] object-contain" alt="Web Development Icon">
-      <div class="px-[12px]">
-        <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">Web Development</h3>
-        <p class="text-gray-600 text-[16px] sm:text-[18px]">Creating modern, responsive websites using Tailwind CSS, JavaScript, and Frappe.</p>
+      <!-- Monthly Plan -->
+      <div class="price-box bg-white shadow-lg rounded-lg p-8 w-full sm:w-[420px] h-[518px]">
+        <h2 class="text-[30px] font-semibold text-gray-800">Monthly</h2>
+        <hr class="my-4">
+        <p class="text-[#98C949] text-[60px] font-bold">$30 <span class="text-lg font-normal text-black font-bold">/ Per
+            Hour</span></p>
+        <ul class="mt-4 text-gray-700 space-y-2">
+          <li>✅ One time contract</li>
+          <li>✅ Flexible Contract</li>
+          <li>✅ Source Files</li>
+          <li>✅ Support</li>
+          <li>✅ Updates</li>
+        </ul>
+        <button
+          class="bg-[#98C949] animated-btn text-white px-[35px] py-[10px] font-bold mt-[25px] rounded-lg hover:bg-[#98C949] text-[18px]">Start
+          Now</button>
       </div>
     </div>
+  </section>
 
-    <!-- Software Development -->
-    <div class="w-full md:w-[651px] bg-white rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px]">
-      <img src="public/Project Pics/ahsanjavaid-high-resolution-logo.png" class="w-[72px] h-[70px] object-contain" alt="Software Development Icon">
-      <div class="px-[12px]">
-        <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">Software Development</h3>
-        <p class="text-gray-600 text-[16px] sm:text-[18px]">Building powerful applications with Frappe, Python, and backend systems.</p>
+  <div class="border-t border-gray-300 mx-auto max-w-[1350px]"></div>
+
+  <!-- Services Section -->
+  <section id="service" class="bg-[#F0F9FA] py-16">
+    <div class="max-w-7xl mx-auto text-center px-4">
+      <h3 class="text-lime-500 text-[24px]">Service</h3>
+      <h2 class="text-[72px] font-bold text-gray-800 text-4xl sm:text-5xl md:text-[72px]">What I Do</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-[1350px] mx-auto mt-[80px] px-4 md:px-6">
+
+      <!-- Web Development -->
+      <div
+        class="w-full md:w-[651px] bg-white rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px]">
+        <img src="public/Project Pics/service-icon-1.png" class="w-[72px] h-[70px] object-contain"
+          alt="Web Development Icon">
+        <div class="px-[12px]">
+          <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">Web Development</h3>
+          <p class="text-gray-600 text-[16px] sm:text-[18px]">Creating modern, responsive websites using Tailwind CSS,
+            JavaScript, and Frappe.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- System Development (Centered) -->
-    <div class="w-full bg-white rounded-2xl shadow-lg flex flex-col items-center text-center gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px] md:col-span-2">
-      <img src="public/Project Pics/frappe icon.png" class="w-[72px] h-[70px] object-contain" alt="System Development Icon">
-      <div class="px-[12px]">
-        <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">System Development</h3>
-        <p class="text-gray-600 text-[16px] sm:text-[18px]">Developing advanced ERP systems using Frappe and custom APIs.</p>
+      <!-- Software Development -->
+      <div
+        class="w-full md:w-[651px] bg-white rounded-2xl shadow-lg flex items-start gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px]">
+        <img src="public/Project Pics/ahsanjavaid-high-resolution-logo.png" class="w-[72px] h-[70px] object-contain"
+          alt="Software Development Icon">
+        <div class="px-[12px]">
+          <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">Software Development</h3>
+          <p class="text-gray-600 text-[16px] sm:text-[18px]">Building powerful applications with Frappe, Python, and
+            backend systems.</p>
+        </div>
       </div>
+
+      <!-- System Development (Centered) -->
+      <div
+        class="w-full bg-white rounded-2xl shadow-lg flex flex-col items-center text-center gap-4 hover:shadow-2xl transition p-6 sm:pl-[50px] sm:pb-[55px] sm:pt-[65px] md:col-span-2">
+        <img src="public/Project Pics/frappe icon.png" class="w-[72px] h-[70px] object-contain"
+          alt="System Development Icon">
+        <div class="px-[12px]">
+          <h3 class="text-[24px] sm:text-[30px] font-semibold text-gray-900">System Development</h3>
+          <p class="text-gray-600 text-[16px] sm:text-[18px]">Developing advanced ERP systems using Frappe and custom
+            APIs.</p>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- Contact Us Section  -->
 
-<!-- Contact Us Section  -->
+  <section id="contact" class="bg-[#F9FAFB] py-16 px-4 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  items-center">
 
-<section id="contact" class="bg-[#F9FAFB] py-16 px-4 relative">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2  items-center">
+      <!-- Top Section -->
+      <div class="col-span-2 text-center">
+        <h3 class="text-lime-500 text-[24px] font-bold mb-[6px]">Contact Me</h3>
+        <h2 class="text-gray-900 md:text-[72px] text-[32px] font-bold leading-tight">Let's Start A New Project</h2>
+        <!-- Success Message -->
+        <p id="success-message"
+          class="hidden text-green-600 font-semibold text-lg mt-4 text-center opacity-0 transition-opacity duration-500">
+          ✅ Your form has been submitted successfully!
+        </p>
+      </div>
 
-     <!-- Top Section -->
-    <div class="col-span-2 text-center">
-      <h3 class="text-lime-500 text-[24px] font-bold mb-[6px]">Contact Me</h3>
-      <h2 class="text-gray-900 md:text-[72px] text-[32px] font-bold leading-tight">Let's Start A New Project</h2>
-    </div>
+      <!-- Contact Info -->
+      <div class="flex flex-col md:flex-row md:w-[1350px] mt-[70px] w-full">
+        <div class="order-1 md:order-none space-y-8 w-full">
+          <div class="space-y-6 max-w-[1350px] w-full">
+            <!-- Location -->
+            <div class="flex items-center gap-4">
+              <div
+                class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Location</h4>
+                <p class="text-gray-600 text-[16px] md:text-[18px]">Firozpur Road, Lahore, Pakistan</p>
+              </div>
+            </div>
 
-     <!-- Contact Info -->
-     <div class="flex flex-col md:flex-row md:w-[1350px] mt-[70px] w-full">
-      <div class="order-1 md:order-none space-y-8 w-full">
-        <div class="space-y-6 max-w-[1350px] w-full">
-          <!-- Location -->
-          <div class="flex items-center gap-4">
-            <div class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
-              <i class="fas fa-map-marker-alt"></i>
+            <!-- Phone -->
+            <div class="flex items-center gap-4">
+              <div
+                class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Phone</h4>
+                <p class="text-gray-600 text-[16px] md:text-[18px]">+923284458706</p>
+              </div>
             </div>
-            <div>
-              <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Location</h4>
-              <p class="text-gray-600 text-[16px] md:text-[18px]">Firozpur Road, Lahore, Pakistan</p>
-            </div>
-          </div>
-    
-          <!-- Phone -->
-          <div class="flex items-center gap-4">
-            <div class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
-              <i class="fas fa-phone"></i>
-            </div>
-            <div>
-              <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Phone</h4>
-              <p class="text-gray-600 text-[16px] md:text-[18px]">+923284458706</p>
-            </div>
-          </div>
-    
-          <!-- Email -->
-          <div class="flex items-center gap-4">
-            <div class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div>
-              <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Email</h4>
-              <p class="text-gray-600 text-[16px] md:text-[18px]">ehsanjavaid321@gmail.com</p>
+
+            <!-- Email -->
+            <div class="flex items-center gap-4">
+              <div
+                class="w-[56px] h-[56px] md:w-[72px] md:h-[72px] bg-lime-500 flex items-center justify-center rounded-full text-white text-xl md:text-2xl">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4 class="text-gray-900 font-semibold text-[18px] md:text-[21px]">Email</h4>
+                <p class="text-gray-600 text-[16px] md:text-[18px]">ehsanjavaid321@gmail.com</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Contact Form -->
+        <form id="contact-form"
+          class="order-2 mt-[45px] md:mt-0 md:order-none p-4 sm:p-6 md:p-8 rounded-xl space-y-4 sm:space-y-6 w-full max-w-[675px] reveal-section">
+          <div class="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6">
+            <input type="text" placeholder="Your Name" required
+              class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+            <input type="email" placeholder="Your Email" required
+              class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+            <input type="tel" placeholder="Your Phone"
+              class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+            <input type="text" placeholder="Your Subject"
+              class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
+          </div>
+          <textarea placeholder="Start writing message here"
+            class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100 h-28 sm:h-32 md:h-40"></textarea>
+          <button type="submit"
+            class="w-full md:w-[199px] bg-lime-500 text-white py-3 text-lg font-semibold rounded-lg hover:bg-lime-600 transition">
+            Submit Now
+          </button>
+        </form>
+
+        
+
+
+
       </div>
-    
-      <!-- Contact Form -->
-      <form id="contact-form" class="order-2 mt-[45px] md:mt-0 md:order-none p-4 sm:p-6 md:p-8 rounded-xl space-y-4 sm:space-y-6 w-full max-w-[675px] reveal-section">
-        <div class="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 md:gap-6">
-          <input type="text" placeholder="Your Name" required class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
-          <input type="email" placeholder="Your Email" required class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
-          <input type="tel" placeholder="Your Phone" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
-          <input type="text" placeholder="Your Subject" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100">
-        </div>
-        <textarea placeholder="Start writing message here" class="p-3 md:p-4 w-full border border-gray-300 rounded-lg focus:ring focus:ring-lime-100 h-28 sm:h-32 md:h-40"></textarea>
-        <button type="submit" class="w-full md:w-[199px] bg-lime-500 text-white py-3 text-lg font-semibold rounded-lg hover:bg-lime-600 transition">
-          Submit Now
-        </button>
-      </form>
-      
-    </div>
-    
+  </section>
 
-  </div>
-</section>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" 
-        class="hidden fixed bottom-6 right-6 w-14 h-14 bg-lime-500 text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 hover:bg-lime-600">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
-        </svg>
-    </button>
+  <!-- Back to Top Button -->
+  <button id="backToTop"
+    class="hidden fixed bottom-6 right-6 w-14 h-14 bg-lime-500 text-white rounded-full flex items-center justify-center shadow-lg transition-opacity duration-300 hover:bg-lime-600">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+      class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
