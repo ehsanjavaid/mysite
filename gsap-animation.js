@@ -340,12 +340,19 @@ document.getElementById("contact-form").addEventListener("submit", function(even
   const formData = new FormData(this);
   const jsonData = Object.fromEntries(formData.entries());
 
-  fetch("https://script.google.com/macros/s/AKfycbylo0EBLREYKFS28jbOy4ZSfaFolPluKC3XGPIe0497JMcnF3N_EzpODYFP5A0hfZq3/exec", { 
+  fetch("https://script.google.com/macros/s/AKfycbxXAuTQHhpYOS85_JrrGtjBUnfPXMGR9OEEKN4S5FXExQXLp3fZeO59OXk_2qVWbDRs/exec", { 
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(jsonData),
   })
-  .then(response => response.text())
-  .then(data => alert("Form submitted successfully!"))
-  .catch(error => alert("Error submitting form!"));
+  .then(response => response.json())  // Convert response to JSON
+  .then(data => {
+    if (data.status === "success") {
+      alert("✅ Form submitted successfully!");
+      document.getElementById("contact-form").reset();
+    } else {
+      alert("❌ Error: " + data.message);
+    }
+  })
+  .catch(error => alert("❌ Error submitting form! " + error));
 });
