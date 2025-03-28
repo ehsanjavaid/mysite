@@ -333,3 +333,19 @@ function changeActiveSection() {
 }
 
 window.addEventListener("scroll", changeActiveSection);
+// submit form scrip
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+  const jsonData = Object.fromEntries(formData.entries());
+
+  fetch("https://script.google.com/macros/s/AKfycbylo0EBLREYKFS28jbOy4ZSfaFolPluKC3XGPIe0497JMcnF3N_EzpODYFP5A0hfZq3/exec", { 
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(jsonData),
+  })
+  .then(response => response.text())
+  .then(data => alert("Form submitted successfully!"))
+  .catch(error => alert("Error submitting form!"));
+});
